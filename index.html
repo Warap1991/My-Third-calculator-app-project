@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Third Calculator application using HTML, CSS and JavaScript</title>
+
+<!-- Here is the JavaScript Code -->
+<script>
+
+// Use insert() function to insert the number in the textview.
+function insert(num) 
+{
+document.form.textview.value = document.form.textview.value + num;
+}
+
+// Use equal() function to return the result based on passed values.
+function equal()
+{
+var exp = document.form.textview.value;
+if(exp)
+{
+document.form.textview.value = eval(exp)
+}
+}
+
+/* Here, we will create a backspace() function to remove the number at the end of the numeric series in the textview. */
+function backspace()
+{
+var exp = document.form.textview.value;
+document.form.textview.value = exp.substring(0, exp.length - 1); /* remove the element from total length ? 1 */
+}
+
+</script>
+
+<!-- Start the coding for CSS -->
+<style>
+/* Create the Outer layout of the Calculator. */
+.formstyle
+{
+width: 235px;
+height: 330px;
+margin: 20px auto;
+border: 3px solid rgb(4, 52, 71);
+border-radius: 5px;
+padding: 20px;
+text-align: center;
+background-color: rgb(16, 168, 38);
+}
+
+/* Display top horizontal bar that contain some information. */
+h1 {
+	text-align: center;
+	padding: 23px;
+	background-color: rgb(3, 19, 25);
+	color: white;
+	}
+input:hover
+{
+background-color: green;
+}
+	
+*{
+margin: 0;
+padding: 0;
+}
+
+/* It is used to create the layout for calculator button. */
+.btn{
+width: 50px;
+height: 50px;
+font-size: 25px;
+margin: 2px;
+cursor: pointer;
+background-color: red;
+color: white;
+
+}
+
+/* It is used to display the numbers, operations and results. */
+.textview{
+width: 223px;
+margin: 5px;
+font-size: 25px;
+padding: 5px;
+background-color: rgb(177, 223, 177);
+}	
+	
+</style>
+</head>
+<body>
+<h1> My Third calculator application using HTML, CSS and JavaScript </h1>
+ <div class= "formstyle">
+ <form name = "form">
+ <input class= "textview" name = "textview">
+ </form>
+ <center>
+ <table >
+ <tr> 
+	<td> <input class = "btn" type = "button" value = "C" onclick = "form1.textview.value = ' ' " style="background-color:rgb(137, 137, 10); border:2px solid white"> </td>
+	<td> <input class = "btn" type = "button" value = "B" onclick = "backspace()" style="background-color:rgb(137, 137, 10); border:2px solid white"> </td>
+	<td> <input class = "btn" type = "button" value = "/" onclick = "insert('/')" style="background-color:rgb(137, 137, 10); border:2px solid white"> </td>
+	<td> <input class = "btn" type = "button" value = "x" onclick = "insert('*')" style="background-color:rgb(137, 137, 10); border:2px solid white"> </td>
+	</tr>
+	
+	 <tr> 
+	<td> <input class = "btn" type = "button" value = "7" onclick = "insert(7)" style="background-color:rgb(137, 137, 10); border:2px solid white"> </td>
+	<td> <input class = "btn" type = "button" value = "8" onclick = "insert(8)" style="background-color:rgb(137, 137, 10); border:2px solid white"> </td>
+	<td> <input class = "btn" type = "button" value = "9" onclick = "insert(9)" style="background-color:rgb(137, 137, 10); border:2px solid white"> </td>
+	<td> <input class = "btn" type = "button" value = "-" onclick = "insert('-')" style="background-color:rgb(137, 137, 10); border:2px solid white"> </td>
+	</tr>
+	
+	 <tr> 
+	<td> <input class = "btn" type = "button" value = "4" onclick = "insert(4)" style="background-color:rgb(137, 137, 10); border:2px solid white" > </td>
+	<td> <input class = "btn" type = "button" value = "5" onclick = "insert(5)" style="background-color:rgb(137, 137, 10); border:2px solid white"> </td>
+	<td> <input class = "btn" type = "button" value = "6" onclick = "insert(6)" style="background-color:rgb(137, 137, 10); border:2px solid white"> </td>
+	<td> <input class = "btn" type = "button" value = "+" onclick = "insert('+')" style="background-color:rgb(137, 137, 10); border:2px solid white"> </td>
+	</tr>
+	
+	 <tr> 
+	<td> <input class = "btn" type = "button" value = "1" onclick = "insert(1)" style="background-color:rgb(137, 137, 10); border:2px solid white"> </td>
+	<td> <input class = "btn" type = "button" value = "2" onclick = "insert(2)" style="background-color:rgb(137, 137, 10); border:2px solid white"> </td>
+	<td> <input class = "btn" type = "button" value = "3" onclick = "insert(3)" style="background-color:rgb(137, 137, 10); border:2px solid white"> </td>
+	<td rowspan = 5> <input class = "btn" style = "height: 110px; background-color:rgb(137, 137, 10); border:2px solid white " type = "button" value = "=" onclick = "equal()" style="background-color:rgb(137, 137, 10); border:2px solid white"> </td>
+	</tr>
+	<tr>
+	<td colspan = 2> <input class = "btn" style = "width: 106px; background-color: rgb(137, 137, 10); border:2px solid white" type = "button" value = "0" onclick = "insert(0)" > </td>
+	<td> <input class = "btn" type = "button" value = "." onclick = "insert('.')" style="background-color:rgb(137, 137, 10); border:2px solid white"> </td>
+	</tr>
+	</table>
+	</center>
+ </div>
+ </body>
+ </html>
+
+ 
